@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Baby Shower Jacobo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#F5F1EB;
+  color:#6B4E3D;
+  text-align:center;
+}
+
+/* SOBRE */
+.cover{
+  position:fixed;
+  inset:0;
+  background:#7C8C6B;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:10;
+}
+.cover button{
+  background:#F5F1EB;
+  color:#6B4E3D;
+  border:none;
+  padding:18px 28px;
+  border-radius:40px;
+  font-size:1.2em;
+  cursor:pointer;
+}
+
+/* HERO */
+.hero{
+  height:90vh;
+  background:
+    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),
+    url('portada.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  color:#fff;
+  background:rgba(255,255,255,.2);
+  padding:28px;
+  border-radius:25px;
+}
+
+/* CARDS */
+.section{padding:25px 15px;}
+.card{
+  background:#fff;
+  max-width:450px;
+  margin:20px auto;
+  padding:22px;
+  border-radius:25px;
+  box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+.quote{font-style:italic}
+
+/* GALERIA */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+.gallery img{
+  width:100%;
+  border-radius:15px;
+}
+
+/* CONTADOR */
+.countdown{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+.countdown div{
+  background:#EFE9E2;
+  padding:10px;
+  border-radius:12px;
+}
+
+/* MAPA */
+iframe{
+  width:100%;
+  height:250px;
+  border:0;
+  border-radius:15px;
+}
+
+/* VIDEO */
+.video{
+  width:100%;
+  aspect-ratio:16/9;
+  border-radius:15px;
+  overflow:hidden;
+}
+
+/* FOOTER */
+.footer{
+  margin:30px 10px;
+  font-size:.85em;
+}
+</style>
+</head>
+
+<body>
+
+<div class="cover" id="cover">
+  <button onclick="openInvite()">Abrir invitación 🧸</button>
+</div>
+
+<div class="hero">
+  <h1>Baby Shower de Jacobo</h1>
+</div>
+
+<div class="section">
+
+<div class="card">
+<strong>Estás invitado a celebrar la dulce espera 💙</strong>
+<p class="quote">
+“No sabemos nada de ser papás pero sí de fiestas y celebraciones,<br>
+así que no faltes a la última fiesta siendo 2,<br>
+en la próxima seremos 3”
+</p>
+</div>
+
+<div class="card">
+📅 <strong>7 de junio de 2026</strong><br>
+⏰ 3:00 PM
+<div class="countdown">
+  <div><span id="d"></span>d</div>
+  <div><span id="h"></span>h</div>
+  <div><span id="m"></span>m</div>
+  <div><span id="s"></span>s</div>
+</div>
+</div>
+
+<div class="card">
+📍 Bogotá - Calle 20 #68d‑30
+<iframe src="https://www.google.com/maps?q=Bogotá Calle 20 68d-30&output=embed"></iframe>
+</div>
+
+<div class="card">
+<strong>Nuestros momentos 💙</strong>
+<div class="gallery">
+  <img src="foto1.jpg"/>
+  <img src="foto2.jpg"/>
+  <img src="foto3.jpg"/>
+  <img src="foto4.jpg"/>
+  <img src="foto5.jpg"/>
+</div>
+</div>
+
+
+<div class="card">
+  <h3>💌 Confirma tu asistencia</h3>
+  <p>
+    Tu presencia es muy importante para nosotros.  
+    Por favor confirma tu asistencia diligenciando el siguiente formulario.
+  </p>
+
+  <a href="https://forms.gle/XXXXXXXX"
+     target="_blank"
+     style="
+       display:inline-block;
+       margin-top:15px;
+       background:#7C8C6B;
+       color:white;
+       padding:14px 26px;
+       border-radius:35px;
+       text-decoration:none;
+       font-weight:500;
+     ">
+     Confirmar asistencia 🧸
+  </a>
+</div>
+``
+
+
+<div class="card">
+<strong>Canción especial 🎶</strong>
+<div class="video">
+  <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+</div>
+</div>
+
+<div class="footer">
+Con amor 💙 Familia de Jacobo
+</div>
+
+</div>
+
+<script>
+function openInvite(){
+  document.getElementById('cover').style.display='none';
+}
+
+const eventDate=new Date("2026-06-07T15:00:00").getTime();
+setInterval(()=>{
+  const diff=eventDate-new Date().getTime();
+  if(diff<0)return;
+  d.innerText=Math.floor(diff/86400000);
+  h.innerText=Math.floor(diff/3600000)%24;
+  m.innerText=Math.floor(diff/60000)%60;
+  s.innerText=Math.floor(diff/1000)%60;
+},1000);
+</script>
+
+</body>
+</html>
