@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baby Shower Jacobo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --beige:#F5F1EB;
+  --beige-claro:#FBF9F6;
+  --cafe:#6B4E3D;
+  --verde:#7C8C6B;
+}
+
+/* FONDO CON TEXTURA */
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  color:var(--cafe);
+  text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.6), transparent 40%),
+    radial-gradient(circle at 80% 10%, rgba(255,255,255,.6), transparent 45%),
+    linear-gradient(180deg,#F5F1EB,#EFE9E2);
+}
+
+/* CORAZONES ANIMADOS */
+.heart{
+  position:fixed;
+  color:#7C8C6B;
+  animation: float 6s infinite;
+  opacity:.6;
+}
+@keyframes float{
+  0%{transform:translateY(0);}
+  100%{transform:translateY(-100vh);}
+}
+
+/* HERO */
+.hero{
+  height:90vh;
+  background:
+    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),
+    url('portada.jpg') center/cover no-repeat;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  color:white;
+  background:rgba(255,255,255,.25);
+  padding:28px;
+  border-radius:25px;
+}
+
+/* TARJETAS */
+.section{padding:25px 15px; max-width:900px; margin:auto;}
+.card{
+  background:var(--beige-claro);
+  margin:20px auto;
+  padding:24px;
+  border-radius:28px;
+  box-shadow:0 12px 30px rgba(0,0,0,.12);
+  max-width:450px;
+  animation:fadeUp .8s ease;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px);}
+  to{opacity:1;}
+}
+
+/* GALERÍA */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+.gallery img{
+  width:100%;
+  border-radius:18px;
+}
+
+/* CONTADOR */
+.countdown{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+.countdown div{
+  background:#EFE9E2;
+  padding:10px;
+  border-radius:12px;
+}
+
+/* VIDEO */
+.video{
+  position:relative;
+  padding-top:56.25%;
+  border-radius:18px;
+  overflow:hidden;
+}
+.video iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* BOTÓN */
+.button{
+  display:inline-block;
+  background:var(--verde);
+  color:white;
+  padding:14px 28px;
+  border-radius:35px;
+  text-decoration:none;
+  margin-top:15px;
+}
+
+.footer{
+  margin:35px 10px;
+  font-size:.85em;
+}
+</style>
+</head>
+
+<body>
+
+<!-- CORAZONES -->
+<div class="heart" style="left:10%">💚</div>
+<div class="heart" style="left:50%">💚</div>
+<div class="heart" style="left:80%">💚</div>
+
+<div class="hero">
+  <h1>Baby Shower de Jacobo 🧸</h1>
+</div>
+
+<div class="section">
+
+<div class="card">
+  <strong>Estás invitado a celebrar la dulce espera 💚</strong>
+  <p>
+    “No sabemos nada de ser papás pero sí de fiestas y celebraciones,<br>
+    así que no faltes a la última fiesta siendo 2,<br>
+    en la próxima seremos 3”
+  </p>
+</div>
+
+<div class="card">
+  📅 <strong>7 de junio de 2026</strong><br>
+  ⏰ 3:00 PM
+  <div class="countdown">
+    <div><span id="d"></span>d</div>
+    <div><span id="h"></span>h</div>
+    <div><span id="m"></span>m</div>
+    <div><span id="s"></span>s</div>
+  </div>
+</div>
+
+<div class="card">
+  🎁 <strong>Lluvia de sobres</strong>
+  <p>Tu cariño y buenos deseos son el mejor regalo.</p>
+</div>
+
+
+<div class="card">
+  <strong>Nuestros momentos 💚</strong>
+  <div class="gallery">
+    <img src="foto1.jpg.JPG" alt="Momento 1">
+    <img src="foto2.jpg.JPG" alt="Momento 2">
+    <img src="foto3.jpg.JPG" alt="Momento 3">
+    <img src="foto4.jpg.JPG" alt="Momento 4">
+    <img src="foto5.jpg.JPG" alt="Momento 5">
+  </div>
+</div>
+
+
+<div class="card">
+  <strong>📍 Ubicación</strong>
+  <iframe 
+    src="https://www.google.com/maps?q=Bogotá Calle 20 68d-30&output=embed">
+  </iframe>
+</div>
+
+<div class="card">
+  <strong>Canción especial 🎶</strong>
+  <div class="video">
+    <iframe 
+      src="https://www.youtube.com/embed/-RjwFR6H7_w"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+<div class="card">
+  <strong>💌 Confirma tu asistencia</strong>
+  <a class="button" 
+     href="https://docs.google.com/forms/d/e/1FAIpQLSdC9dPYFTbC52Ox0XhdAZivrkqzFwxXGfTDddiGjyG5woEqTg/viewform"
+     target="_blank">
+     Confirmar asistencia 🧸💚
+  </a>
+</div>
+
+<div class="footer">
+  Con amor 💚 Familia Barreto Oidor 💚
+</div>
+
+</div>
+
+<script>
+/* CONTADOR */
+const eventDate=new Date("2026-06-07T15:00:00").getTime();
+setInterval(()=>{
+  const diff=eventDate-new Date().getTime();
+  if(diff<0)return;
+  d.innerText=Math.floor(diff/86400000);
+  h.innerText=Math.floor(diff/3600000)%24;
+  m.innerText=Math.floor(diff/60000)%60;
+  s.innerText=Math.floor(diff/1000)%60;
+},1000);
+</script>
+
+</body>
+</html>
